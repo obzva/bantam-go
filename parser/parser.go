@@ -128,8 +128,8 @@ func (p *Parser) lookAhead(dist int) token.Token {
 }
 
 func (p *Parser) getPrecedence() int {
-	if parser, ok := p.infixParselets[p.lookAhead(0).Type]; ok {
-		return parser.GetPrecedence()
+	if parselet, ok := p.infixParselets[p.lookAhead(0).Type]; ok {
+		return parselet.GetPrecedence()
 	}
 	return 0
 }
