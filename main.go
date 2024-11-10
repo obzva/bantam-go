@@ -38,6 +38,8 @@ func main() {
 	// Binary associativity
 	test("a = b = c", "(a = (b = c))")
 	test("a + b - c", "((a + b) - c)")
+	test("a + b * c", "(a + (b * c))")
+	test("a*b+c", "((a * b) + c)")
 	test("a * b / c", "((a * b) / c)")
 	test("a ^ b ^ c", "(a ^ (b ^ c))")
 
